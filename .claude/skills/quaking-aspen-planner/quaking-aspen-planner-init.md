@@ -113,6 +113,10 @@ repo/
 
 1. Edit `plan/project_config.py` — set project name, location, paths, theme
 2. Run `setup_project.py` from the QGIS Python console to create layers and basemaps
-3. Use QGIS + AI to digitize site features and place plants on `proposed_plants`
-4. For each species placed, research it and append a row to `plan/plants.csv`
-5. Run `generate_report.py` to produce the PDF
+3. Zoom the canvas to the project site using `set_canvas_extent` with a ~2 km² bbox
+   centered on the site coordinates collected during intake. At Wasatch Front latitudes,
+   `±0.01°` lon and `±0.009°` lat gives roughly that size. See `resources/data_sources.md`
+   for the bbox formula.
+4. Use QGIS + AI to digitize site features and place plants on `proposed_plants`
+5. For each species placed, research it and append a row to `plan/plants.csv`
+6. Run `generate_report.py` to produce the PDF

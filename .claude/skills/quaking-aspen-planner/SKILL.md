@@ -1,5 +1,6 @@
 ---
 description: Plan a Utah native plant landscape in QGIS — from blank map to PDF proposal
+name: quaking-aspen-planner
 ---
 
 # quaking-aspen-planner

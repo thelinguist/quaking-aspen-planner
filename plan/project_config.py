@@ -99,7 +99,6 @@ MATERIALS = [
     ("Compost / soil amendment",       2,  "cu yd", 22.0),
     ("Drip emitters + tubing",         1,  "set",   120.0),
     ("Plant stakes, flags, labels",    1,  "set",    30.0),
-    ("Delivery",                       1,  "trip",   83.0),
 ]
 
 TAX_RATE = 0.087   # County sales tax — adjust for your county
