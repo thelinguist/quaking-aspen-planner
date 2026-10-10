@@ -183,11 +183,78 @@ image_path  — absolute path to downloaded image, or blank
 
 ---
 
+## Layer Styling
+
+### proposed_plants — canopy-width symbols
+
+All plants in `proposed_plants` must be rendered as circles whose **diameter
+equals the mature canopy width** (`canopy_m * 2`). This is especially important
+for shrubs, where the spread is the dominant design dimension.
+
+This requires the map canvas CRS to be EPSG:32612 (meters) so that Map Units
+resolve to meters on screen. Switch the project CRS before applying the style:
+
+```python
+from qgis.core import (
+    QgsProject, QgsCoordinateReferenceSystem,
+    QgsSingleSymbolRenderer, QgsMarkerSymbol,
+    QgsSymbolLayer, QgsProperty, QgsUnitTypes,
+)
+
+# Switch canvas to metric CRS so Map Units = meters
+QgsProject.instance().setCrs(QgsCoordinateReferenceSystem("EPSG:32612"))
+
+layer = QgsProject.instance().mapLayersByName("proposed_plants")[0]
+
+symbol = QgsMarkerSymbol.createSimple({
+    "name":          "circle",
+    "color":         "34,139,34,180",
+    "outline_style": "solid",
+    "outline_color": "0,100,0,255",
+    "outline_width": "0.3",
+})
+symbol.setSizeUnit(QgsUnitTypes.RenderMapUnits)
+symbol.setDataDefinedProperty(
+    QgsSymbolLayer.PropertySize,
+    QgsProperty.fromExpression('"canopy_m" * 2'),
+)
+
+layer.setRenderer(QgsSingleSymbolRenderer(symbol))
+layer.triggerRepaint()
+print("Canopy-width symbols applied.")
+```
+
+Apply this style immediately after placing the first batch of plants, and
+re-run whenever `canopy_m` values are updated. The canvas CRS change is
+permanent for the session — save the project afterwards.
+
+---
+
 ## Report Generation
 
 The report script reads live layer data, builds HTML, pushes it into a
 QGIS print layout, and exports a PDF. All appearance is driven by
 `REPORT_THEME` in `plan/project_config.py`.
+
+### Required: add a map item to the layout
+
+Before running the report script, the print layout must contain a map item
+showing the project site. The map item is **not added automatically** — create
+it with `mcp__qgis__add_layout_map` after the layout exists:
+
+```python
+# After creating the layout (Layout Manager → New):
+# mcp__qgis__add_layout_map sets extent to the current canvas view.
+# Zoom the canvas to the project site first, then call:
+mcp__qgis__add_layout_map(
+    layout_name=GIS["layout_name"],
+    position={"x": 10, "y": 10},       # mm from top-left
+    size={"width": 190, "height": 120}, # mm
+)
+```
+
+The map item extent is locked to the canvas at the time of creation. If the
+canvas has drifted, zoom back to the site before adding the map item.
 
 ```python
 # From QGIS Python console:
@@ -195,6 +262,8 @@ import sys; sys.path.insert(0, '/path/to/repo')
 exec(open('/path/to/repo/scripts/generate_report.py').read())
 ```
 
+**If the map is missing from the PDF:** the layout has no map item — add one
+with `mcp__qgis__add_layout_map` and re-export.
 **If a species shows a WARNING:** research and add it to `plan/plants.csv`.
 **If the layout is not found:** create it in QGIS Layout Manager and set
 `GIS["layout_name"]` in `plan/project_config.py` to match.
