@@ -1,0 +1,16 @@
+output/
+.venv
+.idea
+.DS_Store
+
+# QGIS project files (contain local paths and parcel data)
+plan/*.qgz
+plan/*.qgs
+
+# Runtime-fetched plant images
+resources/images/*
+!resources/images/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
