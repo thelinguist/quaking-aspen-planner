@@ -1,12 +1,16 @@
-# qgis-native-plants
+---
+description: Plan a Utah native plant landscape in QGIS — from blank map to PDF proposal
+---
+
+# quaking-aspen-planner
 
 Framework for building Utah native plant landscaping proposals in QGIS.
 Load the section you need; do not load all three unless you have a reason.
 
 | Section | File | When to load |
 |---------|------|--------------|
-| **Initialization** | `skills/qgis-native-plants-init.md` | Starting a new project session — intake questions, memory format, project structure, setup checklist |
-| **Development** | `skills/qgis-native-plants-dev.md` | Active design work — QGIS MCP patterns, layer schema, plant research, CSV fields, report generation |
+| **Initialization** | `skills/quaking-aspen-planner-init.md` | Starting a new project session — intake questions, memory format, project structure, setup checklist |
+| **Development** | `skills/quaking-aspen-planner-dev.md` | Active design work — QGIS MCP patterns, layer schema, plant research, CSV fields, report generation |
 
 ## Quick start
 

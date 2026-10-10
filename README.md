@@ -83,7 +83,14 @@ Open `plan/project_config.py` in any text editor. Fill in:
 
 ### 5. Start a session with your AI assistant
 
-Load the skill file `skills/qgis-native-plants.md` into your AI session. It will:
+The skill files live in `.claude/skills/` and are available automatically in any
+Claude Code session opened from this directory. To activate the skill, type:
+
+```
+/quaking-aspen-planner
+```
+
+in the Claude Code input box. The skill will:
 
 1. Ask you a few questions about your site
 2. Walk you through running `setup_project.py` to initialize the QGIS project
@@ -108,8 +115,11 @@ framework/
 ├── resources/
 │   ├── data_sources.md     ← all research URLs and data source details
 │   └── images/             ← plant photos fetched by AI
-└── skills/
-    └── qgis-native-plants.md  ← AI skill index (load this to start)
+└── .claude/
+    └── skills/
+        ├── quaking-aspen-planner.md       ← skill index — run /quaking-aspen-planner to start
+        ├── quaking-aspen-planner-init.md  ← loaded automatically for new projects
+        └── quaking-aspen-planner-dev.md   ← loaded automatically for active design work
 ```
 
 ---

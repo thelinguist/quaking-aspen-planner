@@ -1,4 +1,4 @@
-# qgis-native-plants — Development
+# quaking-aspen-planner — Development
 
 Reference for active design and coding work: QGIS patterns, layer schema,
 plant research, and report generation.

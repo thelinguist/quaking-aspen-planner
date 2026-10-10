@@ -1,4 +1,4 @@
-# qgis-native-plants — Initialization
+# quaking-aspen-planner — Initialization
 
 Run this section at the start of every new project session.
 
@@ -106,7 +106,7 @@ repo/
 │   ├── data_sources.md     ← research URLs and data source reference
 │   └── images/             ← plant photos fetched by AI
 └── skills/
-    └── qgis-native-plants.md ← skill index
+    └── quaking-aspen-planner.md ← skill index
 ```
 
 ## Setup Checklist
