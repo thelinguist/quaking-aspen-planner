@@ -53,6 +53,21 @@ You and the AI work together — you make design decisions, the AI handles the d
 
 ---
 
+## Example output
+
+The screenshots below are from an eval run: a uniform planting of Rocky Mountain Juniper
+(*Juniperus scopulorum*) at 5-meter spacing around the Utah State Capitol perimeter.
+
+**Summary page** — aerial photo of the site with the intro section below it:
+
+![Summary page](docs/summary.png)
+
+**Budget page** — itemized cost estimate auto-generated from the plant catalog:
+
+![Budget page](docs/budget.png)
+
+---
+
 ## Getting started
 
 ### 1. Install QGIS
