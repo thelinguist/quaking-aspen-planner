@@ -140,7 +140,7 @@ def build_intro():
 <h1>{PROJECT['name']} — {PROJECT.get('subtitle','')}</h1>
 {photo_html}
 <div style="overflow:hidden;margin-top:6px;">
-<div style="float:left;width:1196px;margin-right:12px;">
+<div style="float:left;width:48%;margin-right:4%;">
   <h2>Summary</h2>
   <p>This proposal requests a land-management agreement to plant and maintain a native
   drought-tolerant buffer in <b>{PROJECT['location']}</b> (USDA Zone {PROJECT['usda_zone']}).</p>
@@ -151,7 +151,7 @@ def build_intro():
     <li><b>Wildflower seed:</b> {wf_area_sqft:.0f} sqft native mix</li>
   </ul>
 </div>
-<div style="float:left;width:1196px;">
+<div style="float:left;width:48%;">
   <h2>Benefits</h2>
   <ul>
     <li>Native canopy provides shade, wind buffer, and wildlife habitat</li>

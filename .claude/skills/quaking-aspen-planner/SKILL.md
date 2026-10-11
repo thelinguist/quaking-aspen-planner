@@ -11,12 +11,14 @@ Load the section you need; do not load all three unless you have a reason.
 | Section | File | When to load |
 |---------|------|--------------|
 | **Initialization** | `skills/quaking-aspen-planner-init.md` | Starting a new project session — intake questions, memory format, project structure, setup checklist |
-| **Development** | `skills/quaking-aspen-planner-dev.md` | Active design work — QGIS MCP patterns, layer schema, plant research, CSV fields, report generation |
+| **Development** | `skills/quaking-aspen-planner-dev.md` | Active design work — QGIS MCP patterns, layer schema, plant research, CSV fields |
+| **Report** | `skills/quaking-aspen-planner-report.md` | Generating or fixing the PDF proposal — layout setup, map/legend, troubleshooting |
 
 ## Quick start
 
 If this is a new project or a new developer, load **Initialization** first.
 If the project is already set up and you are digitizing or researching plants, load **Development**.
+If the user asks to generate, export, or fix the report PDF, load **Report**.
 
 # Rules & Tips
 

@@ -46,7 +46,6 @@ if GIS.get("orthophoto_path"):
 # Each entry: (layer_name, geometry_type, [(field_name, QVariant_type), ...])
 # Geometry types: Point, LineString, Polygon
 STANDARD_LAYERS = [
-    ("trail",             "LineString", [("surface",   QVariant.String)]),
     ("management_bounds", "LineString", [("side",      QVariant.String)]),
     ("wildflower_areas",  "Polygon",    [
         ("side",      QVariant.String),
